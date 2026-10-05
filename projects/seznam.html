@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Seznam Advertising Analytics | Alejandro Madueño</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+</head>
+
+<body>
+
+<header class="case-navbar">
+
+    <a href="../index.html" class="case-logo">AMG</a>
+
+    <a href="../index.html#projects" class="case-back"
+       data-es="← Volver a proyectos"
+       data-en="← Back to projects">
+        ← Volver a proyectos
+    </a>
+
+    <div class="language">
+
+        <button id="lang-es" class="active">ES</button>
+
+        <span>|</span>
+
+        <button id="lang-en">EN</button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="case-hero">
+
+    <span class="case-number">01 · DATA SCIENCE</span>
+
+    <h1>
+        Seznam Advertising Analytics
+    </h1>
+
+    <p class="case-intro"
+       data-es="Predicción del gasto publicitario mensual a partir del comportamiento histórico de clientes y datos relacionales."
+       data-en="Monthly advertising spend prediction using historical customer behaviour and relational data.">
+        Predicción del gasto publicitario mensual a partir del comportamiento histórico de clientes y datos relacionales.
+    </p>
+
+    <div class="case-tags">
+
+        <span>Python</span>
+        <span>SQL</span>
+        <span>PostgreSQL</span>
+        <span>Machine Learning</span>
+        <span>Streamlit</span>
+
+    </div>
+
+</section>
+
+
+<div class="case-image">
+
+    <img src="../assets/seznam-dashboard.png"
+         alt="Seznam Advertising Analytics dashboard">
+
+</div>
+
+
+<div class="case-main">
+
+
+<section class="case-section">
+
+    <p class="case-label"
+       data-es="01 · PROBLEMA"
+       data-en="01 · PROBLEM">
+        01 · PROBLEMA
+    </p>
+
+    <h2
+        data-es="¿Podemos predecir cuánto gastará un cliente el próximo mes?"
+        data-en="Can we predict how much a client will spend next month?">
+        ¿Podemos predecir cuánto gastará un cliente el próximo mes?
+    </h2>
+
+    <p
+        data-es="El objetivo fue construir un modelo capaz de estimar el gasto publicitario mensual de cada cliente utilizando únicamente información disponible antes del mes que se quiere predecir."
+        data-en="The goal was to build a model capable of estimating each client's monthly advertising spend using only information available before the month being predicted.">
+        El objetivo fue construir un modelo capaz de estimar el gasto publicitario mensual de cada cliente utilizando únicamente información disponible antes del mes que se quiere predecir.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">02 · DATA</p>
+
+    <h2
+        data-es="Datos relacionales reales"
+        data-en="Real relational data">
+        Datos relacionales reales
+    </h2>
+
+    <p
+        data-es="El proyecto utiliza el Seznam Advertising Dataset, procedente del CTU Relational Dataset Repository. La estructura original mantiene varias tablas relacionadas con clientes, recargas y actividad publicitaria."
+        data-en="The project uses the Seznam Advertising Dataset from the CTU Relational Dataset Repository. The original structure contains several tables related to clients, recharges and advertising activity.">
+        El proyecto utiliza el Seznam Advertising Dataset, procedente del CTU Relational Dataset Repository. La estructura original mantiene varias tablas relacionadas con clientes, recargas y actividad publicitaria.
+    </p>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>2.68M</strong>
+            <span
+                data-es="Registros originales"
+                data-en="Original records">
+                Registros originales
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>4</strong>
+            <span
+                data-es="Tablas relacionales"
+                data-en="Relational tables">
+                Tablas relacionales
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>146.8 MB</strong>
+            <span
+                data-es="Tamaño del dataset"
+                data-en="Dataset size">
+                Tamaño del dataset
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">03 · PIPELINE</p>
+
+    <h2
+        data-es="De datos relacionales a predicción"
+        data-en="From relational data to prediction">
+        De datos relacionales a predicción
+    </h2>
+
+    <div class="tech-box">
+
+        <p>
+            Datos relacionales → PostgreSQL → SQL →
+            Variables históricas → Modelo predictivo →
+            Evaluación → Dashboard
+        </p>
+
+    </div>
+
+    <p
+        data-es="En PostgreSQL se construyeron agregaciones mensuales, variables de comportamiento histórico, retardos temporales, medidas de variabilidad, gasto máximo, composición por servicio y variables relacionadas con las recargas."
+        data-en="PostgreSQL was used to build monthly aggregations, historical behaviour variables, temporal lags, variability measures, maximum spend, service composition and recharge-related variables.">
+        En PostgreSQL se construyeron agregaciones mensuales, variables de comportamiento histórico, retardos temporales, medidas de variabilidad, gasto máximo, composición por servicio y variables relacionadas con las recargas.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">04 · MODEL</p>
+
+    <h2
+        data-es="Predicción temporal sin fuga de información"
+        data-en="Temporal prediction without data leakage">
+        Predicción temporal sin fuga de información
+    </h2>
+
+    <p
+        data-es="El conjunto de entrenamiento utiliza información hasta diciembre de 2014, mientras que el test comienza en enero de 2015. Esta separación temporal permite evaluar el modelo en un escenario más próximo a una predicción futura."
+        data-en="The training set uses information up to December 2014, while the test set starts in January 2015. This temporal split provides a more realistic evaluation of future prediction.">
+        El conjunto de entrenamiento utiliza información hasta diciembre de 2014, mientras que el test comienza en enero de 2015. Esta separación temporal permite evaluar el modelo en un escenario más próximo a una predicción futura.
+    </p>
+
+    <p
+        data-es="El modelo final fue un HistGradientBoostingRegressor de scikit-learn. El objetivo modelado fue el cambio respecto al gasto del mes anterior y posteriormente se reconstruyó el gasto predicho."
+        data-en="The final model was a HistGradientBoostingRegressor from scikit-learn. The model predicted the change from the previous month's spend, which was then used to reconstruct predicted spend.">
+        El modelo final fue un HistGradientBoostingRegressor de scikit-learn. El objetivo modelado fue el cambio respecto al gasto del mes anterior y posteriormente se reconstruyó el gasto predicho.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">05 · RESULTS</p>
+
+    <h2
+        data-es="Resultados"
+        data-en="Results">
+        Resultados
+    </h2>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>0,8655</strong>
+            <span>R²</span>
+        </div>
+
+        <div class="metric">
+            <strong>2.778,42 Kč</strong>
+            <span>MAE</span>
+        </div>
+
+        <div class="metric">
+            <strong>≈ 15,91 €</strong>
+            <span
+                data-es="Error absoluto mediano"
+                data-en="Median absolute error">
+                Error absoluto mediano
+            </span>
+        </div>
+
+    </div>
+
+    <p
+        data-es="El error absoluto mediano fue de 386,49 Kč, equivalente aproximadamente a 15,91 € utilizando la conversión establecida en el proyecto."
+        data-en="The median absolute error was 386.49 Kč, approximately €15.91 using the conversion established in the project.">
+        El error absoluto mediano fue de 386,49 Kč, equivalente aproximadamente a 15,91 € utilizando la conversión establecida en el proyecto.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label"
+       data-es="06 · INTERPRETACIÓN"
+       data-en="06 · INTERPRETATION">
+        06 · INTERPRETACIÓN
+    </p>
+
+    <h2
+        data-es="Del modelo al comportamiento del negocio"
+        data-en="From model to business behaviour">
+        Del modelo al comportamiento del negocio
+    </h2>
+
+    <p
+        data-es="El dashboard permite analizar la evolución del gasto real frente al predicho, la distribución de errores y cómo varía el rendimiento según región y sector."
+        data-en="The dashboard allows analysis of actual versus predicted spend, error distributions and performance across regions and sectors.">
+        El dashboard permite analizar la evolución del gasto real frente al predicho, la distribución de errores y cómo varía el rendimiento según región y sector.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label"
+       data-es="07 · LIMITACIONES"
+       data-en="07 · LIMITATIONS">
+        07 · LIMITACIONES
+    </p>
+
+    <h2
+        data-es="Qué debe tenerse en cuenta"
+        data-en="What should be considered">
+        Qué debe tenerse en cuenta
+    </h2>
+
+    <p
+        data-es="El rendimiento se ha evaluado sobre una partición temporal concreta del dataset. Los resultados deben interpretarse dentro de las características y periodo disponibles en estos datos."
+        data-en="Performance was evaluated on a specific temporal split of the dataset. Results should therefore be interpreted within the characteristics and period represented by these data.">
+        El rendimiento se ha evaluado sobre una partición temporal concreta del dataset. Los resultados deben interpretarse dentro de las características y periodo disponibles en estos datos.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">08 · TECHNOLOGY</p>
+
+    <h2
+        data-es="Stack técnico"
+        data-en="Technical stack">
+        Stack técnico
+    </h2>
+
+    <div class="case-tags">
+
+        <span>PostgreSQL</span>
+        <span>SQL</span>
+        <span>Python</span>
+        <span>pandas</span>
+        <span>NumPy</span>
+        <span>scikit-learn</span>
+        <span>Plotly</span>
+        <span>Streamlit</span>
+        <span>Jupyter</span>
+
+    </div>
+
+    <div class="case-links">
+
+        <a href="https://github.com/AlexMadu56/seznam-advertising-analytics"
+           target="_blank">
+            GitHub ↗
+        </a>
+
+        <a href="https://seznam-advertising-analytics-5ihyleia2utty79hl4r9wr.streamlit.app"
+           target="_blank"
+           class="secondary">
+            App ↗
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+</main>
+
+
+<footer class="case-footer">
+
+    <span>© Alejandro Madueño Gálvez</span>
+
+    <a href="../index.html#projects">
+        ← Projects
+    </a>
+
+</footer>
+
+
+<script>
+
+const langES = document.getElementById("lang-es");
+const langEN = document.getElementById("lang-en");
+
+const translatableElements =
+    document.querySelectorAll("[data-es][data-en]");
+
+function changeLanguage(language) {
+
+    translatableElements.forEach(element => {
+        element.textContent =
+            element.getAttribute(`data-${language}`);
+    });
+
+    document.documentElement.lang = language;
+
+    if (language === "es") {
+        langES.classList.add("active");
+        langEN.classList.remove("active");
+    } else {
+        langEN.classList.add("active");
+        langES.classList.remove("active");
+    }
+}
+
+langES.addEventListener("click", () => changeLanguage("es"));
+langEN.addEventListener("click", () => changeLanguage("en"));
+
+</script>
+
+</body>
+</html>

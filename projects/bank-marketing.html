@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Marketing | Alejandro Madueño</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+</head>
+
+<body>
+
+<header class="case-navbar">
+
+    <a href="../index.html" class="case-logo">AMG</a>
+
+    <a href="../index.html#projects"
+       class="case-back"
+       data-es="← Volver a proyectos"
+       data-en="← Back to projects">
+        ← Volver a proyectos
+    </a>
+
+    <div class="language">
+        <button id="lang-es" class="active">ES</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="case-hero">
+
+    <span class="case-number">02 · CLASSIFICATION</span>
+
+    <h1>Bank Marketing</h1>
+
+    <p class="case-intro"
+       data-es="Predicción de la suscripción a depósitos a plazo mediante Machine Learning, con especial atención al desbalanceo de clases, la selección del umbral y la interpretabilidad."
+       data-en="Term-deposit subscription prediction using Machine Learning, focusing on class imbalance, threshold selection and interpretability.">
+        Predicción de la suscripción a depósitos a plazo mediante Machine Learning, con especial atención al desbalanceo de clases, la selección del umbral y la interpretabilidad.
+    </p>
+
+    <div class="case-tags">
+        <span>Python</span>
+        <span>XGBoost</span>
+        <span>Classification</span>
+        <span>SHAP</span>
+        <span>scikit-learn</span>
+    </div>
+
+</section>
+
+
+<div class="case-image">
+
+    <img src="../assets/bank-marketing.png"
+         alt="Bank Marketing analysis">
+
+</div>
+
+
+<div class="case-main">
+
+
+<section class="case-section">
+
+    <p class="case-label">01 · PROBLEMA</p>
+
+    <h2
+        data-es="¿Qué clientes tienen mayor probabilidad de contratar un depósito?"
+        data-en="Which customers are more likely to subscribe to a term deposit?">
+        ¿Qué clientes tienen mayor probabilidad de contratar un depósito?
+    </h2>
+
+    <p
+        data-es="El objetivo es estimar la probabilidad de que un cliente responda positivamente a una campaña de telemarketing y utilizar el modelo como apoyo para priorizar contactos."
+        data-en="The goal is to estimate the probability that a customer responds positively to a telemarketing campaign and use the model to support contact prioritization.">
+        El objetivo es estimar la probabilidad de que un cliente responda positivamente a una campaña de telemarketing y utilizar el modelo como apoyo para priorizar contactos.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">02 · DATA</p>
+
+    <h2
+        data-es="Un problema fuertemente desbalanceado"
+        data-en="A strongly imbalanced problem">
+        Un problema fuertemente desbalanceado
+    </h2>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>45.211</strong>
+            <span
+                data-es="Registros"
+                data-en="Records">
+                Registros
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>16</strong>
+            <span
+                data-es="Variables predictoras"
+                data-en="Predictive variables">
+                Variables predictoras
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>11,7 %</strong>
+            <span
+                data-es="Clase positiva"
+                data-en="Positive class">
+                Clase positiva
+            </span>
+        </div>
+
+    </div>
+
+    <p
+        data-es="El fuerte desbalanceo hace que Accuracy sea una métrica poco adecuada como criterio principal. Un modelo que siempre predijera 'no' alcanzaría aproximadamente un 88 % de accuracy sin aportar valor real."
+        data-en="The strong class imbalance makes Accuracy a poor primary metric. A model that always predicted 'no' would achieve approximately 88% accuracy without providing real value.">
+        El fuerte desbalanceo hace que Accuracy sea una métrica poco adecuada como criterio principal. Un modelo que siempre predijera "no" alcanzaría aproximadamente un 88 % de accuracy sin aportar valor real.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">03 · METHODOLOGY</p>
+
+    <h2
+        data-es="Un pipeline orientado a evitar leakage"
+        data-en="A pipeline designed to prevent leakage">
+        Un pipeline orientado a evitar leakage
+    </h2>
+
+    <ul>
+
+        <li
+            data-es="Split train/test estratificado 80/20 antes de cualquier transformación."
+            data-en="Stratified 80/20 train/test split before any transformation.">
+            Split train/test estratificado 80/20 antes de cualquier transformación.
+        </li>
+
+        <li
+            data-es="Tratamiento de valores 'unknown' como valores faltantes."
+            data-en="Treatment of 'unknown' values as missing values.">
+            Tratamiento de valores "unknown" como valores faltantes.
+        </li>
+
+        <li
+            data-es="Ingeniería de variables y transformaciones logarítmicas."
+            data-en="Feature engineering and logarithmic transformations.">
+            Ingeniería de variables y transformaciones logarítmicas.
+        </li>
+
+        <li
+            data-es="IterativeImputer integrado en pipelines."
+            data-en="IterativeImputer integrated into pipelines.">
+            IterativeImputer integrado en pipelines.
+        </li>
+
+        <li
+            data-es="Comparación entre Regresión Logística, Random Forest y XGBoost."
+            data-en="Comparison of Logistic Regression, Random Forest and XGBoost.">
+            Comparación entre Regresión Logística, Random Forest y XGBoost.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">04 · RESULTS</p>
+
+    <h2
+        data-es="XGBoost como modelo seleccionado"
+        data-en="XGBoost as the selected model">
+        XGBoost como modelo seleccionado
+    </h2>
+
+    <p
+        data-es="XGBoost obtuvo el mejor Average Precision durante la validación cruzada y fue seleccionado para la evaluación final."
+        data-en="XGBoost achieved the best Average Precision during cross-validation and was selected for final evaluation.">
+        XGBoost obtuvo el mejor Average Precision durante la validación cruzada y fue seleccionado para la evaluación final.
+    </p>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>0,9342</strong>
+            <span>ROC-AUC</span>
+        </div>
+
+        <div class="metric">
+            <strong>0,6275</strong>
+            <span>Average Precision</span>
+        </div>
+
+        <div class="metric">
+            <strong>89,22 %</strong>
+            <span>Recall</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">05 · THRESHOLD</p>
+
+    <h2
+        data-es="El umbral también es una decisión de negocio"
+        data-en="The threshold is also a business decision">
+        El umbral también es una decisión de negocio
+    </h2>
+
+    <p
+        data-es="El modelo no se limita al umbral 0,5. Se analiza cómo cambian Precision, Recall, F1, F0.5 y F2 al modificar el punto de decisión."
+        data-en="The model is not restricted to the default 0.5 threshold. Precision, Recall, F1, F0.5 and F2 are analysed across different thresholds.">
+        El modelo no se limita al umbral 0,5. Se analiza cómo cambian Precision, Recall, F1, F0.5 y F2 al modificar el punto de decisión.
+    </p>
+
+    <p
+        data-es="Esto permite adaptar el comportamiento del modelo al coste real de una llamada frente al valor de detectar a un cliente que finalmente contrataría el producto."
+        data-en="This allows model behaviour to be adapted to the real cost of a call versus the value of identifying a customer who would ultimately subscribe.">
+        Esto permite adaptar el comportamiento del modelo al coste real de una llamada frente al valor de detectar a un cliente que finalmente contrataría el producto.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">06 · INTERPRETABILITY</p>
+
+    <h2
+        data-es="De la predicción a la explicación"
+        data-en="From prediction to explanation">
+        De la predicción a la explicación
+    </h2>
+
+    <p
+        data-es="El proyecto combina odds ratios, importancia de variables y SHAP para estudiar qué variables están más asociadas con las predicciones."
+        data-en="The project combines odds ratios, feature importance and SHAP to understand which variables are most associated with model predictions.">
+        El proyecto combina odds ratios, importancia de variables y SHAP para estudiar qué variables están más asociadas con las predicciones.
+    </p>
+
+    <p
+        data-es="El historial de campañas anteriores y la duración de la llamada aparecen entre los factores más relevantes."
+        data-en="Previous campaign history and call duration appear among the most relevant factors.">
+        El historial de campañas anteriores y la duración de la llamada aparecen entre los factores más relevantes.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">07 · BUSINESS INSIGHTS</p>
+
+    <h2
+        data-es="Aplicación a campañas de marketing"
+        data-en="Application to marketing campaigns">
+        Aplicación a campañas de marketing
+    </h2>
+
+    <p
+        data-es="El modelo puede utilizarse como herramienta de priorización. El objetivo no es simplemente maximizar una métrica, sino elegir un equilibrio entre el número de contactos realizados y la cantidad de clientes potenciales detectados."
+        data-en="The model can be used as a prioritization tool. The objective is not simply to maximize one metric, but to balance the number of contacts against the number of potential subscribers identified.">
+        El modelo puede utilizarse como herramienta de priorización. El objetivo no es simplemente maximizar una métrica, sino elegir un equilibrio entre el número de contactos realizados y la cantidad de clientes potenciales detectados.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">08 · TECH STACK</p>
+
+    <h2
+        data-es="Stack técnico"
+        data-en="Technical stack">
+        Stack técnico
+    </h2>
+
+    <div class="case-tags">
+        <span>Python</span>
+        <span>pandas</span>
+        <span>scikit-learn</span>
+        <span>XGBoost</span>
+        <span>SHAP</span>
+        <span>Jupyter</span>
+    </div>
+
+    <div class="case-links">
+
+        <a href="https://github.com/AlexMadu56/bank-marketing-ml"
+           target="_blank">
+            GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<footer class="case-footer">
+
+    <span>© Alejandro Madueño Gálvez</span>
+
+    <a href="../index.html#projects">
+        ← Projects
+    </a>
+
+</footer>
+
+
+<script>
+
+const langES = document.getElementById("lang-es");
+const langEN = document.getElementById("lang-en");
+
+const translatableElements =
+    document.querySelectorAll("[data-es][data-en]");
+
+function changeLanguage(language) {
+
+    translatableElements.forEach(element => {
+        element.textContent =
+            element.getAttribute(`data-${language}`);
+    });
+
+    document.documentElement.lang = language;
+
+    if (language === "es") {
+        langES.classList.add("active");
+        langEN.classList.remove("active");
+    } else {
+        langEN.classList.add("active");
+        langES.classList.remove("active");
+    }
+}
+
+langES.addEventListener("click", () => changeLanguage("es"));
+langEN.addEventListener("click", () => changeLanguage("en"));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Credit Approval Prediction | Alejandro Madueño</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+</head>
+
+<body>
+
+<header class="case-navbar">
+
+    <a href="../index.html" class="case-logo">AMG</a>
+
+    <a href="../index.html#projects"
+       class="case-back"
+       data-es="← Volver a proyectos"
+       data-en="← Back to projects">
+        ← Volver a proyectos
+    </a>
+
+    <div class="language">
+        <button id="lang-es" class="active">ES</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="case-hero">
+
+    <span class="case-number">04 · CLASSIFICATION</span>
+
+    <h1>Credit Approval Prediction</h1>
+
+    <p class="case-intro"
+       data-es="Pipeline completo de Machine Learning para predecir decisiones de aprobación de crédito, con especial atención a la prevención de data leakage, optimización de modelos y análisis de decisiones."
+       data-en="End-to-end Machine Learning pipeline for credit approval prediction, focusing on data leakage prevention, model optimization and decision analysis.">
+        Pipeline completo de Machine Learning para predecir decisiones de aprobación de crédito, con especial atención a la prevención de data leakage, optimización de modelos y análisis de decisiones.
+    </p>
+
+    <div class="case-tags">
+        <span>Python</span>
+        <span>Classification</span>
+        <span>XGBoost</span>
+        <span>scikit-learn</span>
+        <span>Model Evaluation</span>
+    </div>
+
+</section>
+
+
+<div class="case-image">
+
+    <img src="../assets/credit-approval.png"
+         alt="Credit Approval Prediction analysis">
+
+</div>
+
+
+<div class="case-main">
+
+
+<section class="case-section">
+
+    <p class="case-label">01 · PROBLEM</p>
+
+    <h2
+        data-es="Predecir una decisión de aprobación"
+        data-en="Predicting a credit approval decision">
+        Predecir una decisión de aprobación
+    </h2>
+
+    <p
+        data-es="El proyecto utiliza el dataset Credit Approval de UCI para desarrollar un modelo capaz de clasificar solicitudes de crédito en dos clases: aprobadas o rechazadas."
+        data-en="The project uses the UCI Credit Approval dataset to build a model that classifies credit applications into two classes: approved or rejected.">
+        El proyecto utiliza el dataset Credit Approval de UCI para desarrollar un modelo capaz de clasificar solicitudes de crédito en dos clases: aprobadas o rechazadas.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">02 · DATA</p>
+
+    <h2
+        data-es="Un dataset pequeño y anonimizado"
+        data-en="A small and anonymized dataset">
+        Un dataset pequeño y anonimizado
+    </h2>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>690</strong>
+            <span
+                data-es="Solicitudes"
+                data-en="Applications">
+                Solicitudes
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>80/20</strong>
+            <span
+                data-es="Train / Test"
+                data-en="Train / Test">
+                Train / Test
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>UCI</strong>
+            <span>Dataset source</span>
+        </div>
+
+    </div>
+
+    <p
+        data-es="Las variables originales están anonimizadas, por lo que el modelo puede identificar capacidad predictiva, pero no permite interpretar directamente variables como ingresos, segmentos de clientes o características demográficas."
+        data-en="The original variables are anonymized, meaning the model can identify predictive patterns but cannot directly interpret variables such as income, customer segments or demographic characteristics.">
+        Las variables originales están anonimizadas, por lo que el modelo puede identificar capacidad predictiva, pero no permite interpretar directamente variables como ingresos, segmentos de clientes o características demográficas.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">03 · LEAKAGE-FREE DESIGN</p>
+
+    <h2
+        data-es="El test permanece aislado"
+        data-en="The test set remains isolated">
+        El test permanece aislado
+    </h2>
+
+    <p
+        data-es="El conjunto de test se separa antes de cualquier decisión de preprocessing o modelización. La imputación, el escalado y la codificación se integran dentro de pipelines de scikit-learn y se ajustan únicamente dentro de los folds de validación cruzada."
+        data-en="The test set is isolated before any preprocessing or modelling decision. Imputation, scaling and encoding are embedded in scikit-learn pipelines and fitted only inside cross-validation folds.">
+        El conjunto de test se separa antes de cualquier decisión de preprocessing o modelización. La imputación, el escalado y la codificación se integran dentro de pipelines de scikit-learn y se ajustan únicamente dentro de los folds de validación cruzada.
+    </p>
+
+    <div class="tech-box">
+
+        <p>
+            Train/Test split → Pipeline → Cross-validation →
+            Hyperparameter optimization → Final test evaluation
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">04 · MODELS</p>
+
+    <h2
+        data-es="Tres modelos, dos objetivos"
+        data-en="Three models, two objectives">
+        Tres modelos, dos objetivos
+    </h2>
+
+    <p
+        data-es="Se compararon Regresión Logística, Random Forest y XGBoost mediante validación cruzada estratificada. Los hiperparámetros se optimizaron de forma independiente para Accuracy y Recall."
+        data-en="Logistic Regression, Random Forest and XGBoost were compared using stratified cross-validation. Hyperparameters were optimized separately for Accuracy and Recall.">
+        Se compararon Regresión Logística, Random Forest y XGBoost mediante validación cruzada estratificada. Los hiperparámetros se optimizaron de forma independiente para Accuracy y Recall.
+    </p>
+
+    <div class="case-columns">
+
+        <div class="case-column">
+
+            <h3>Accuracy</h3>
+
+            <p
+                data-es="Objetivo orientado a maximizar la proporción total de decisiones correctas."
+                data-en="Objective focused on maximizing the overall proportion of correct decisions.">
+                Objetivo orientado a maximizar la proporción total de decisiones correctas.
+            </p>
+
+        </div>
+
+        <div class="case-column">
+
+            <h3>Recall</h3>
+
+            <p
+                data-es="Objetivo orientado a reducir falsos negativos y detectar una mayor proporción de solicitudes aprobadas."
+                data-en="Objective focused on reducing false negatives and identifying a higher proportion of approved applications.">
+                Objetivo orientado a reducir falsos negativos y detectar una mayor proporción de solicitudes aprobadas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">05 · RESULTS</p>
+
+    <h2
+        data-es="El rendimiento depende del objetivo"
+        data-en="Performance depends on the objective">
+        El rendimiento depende del objetivo
+    </h2>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>0,960</strong>
+            <span>ROC-AUC · Accuracy optimized</span>
+        </div>
+
+        <div class="metric">
+            <strong>0,902</strong>
+            <span>Recall · Recall optimized</span>
+        </div>
+
+        <div class="metric">
+            <strong>0,939</strong>
+            <span>PR-AUC · Recall optimized</span>
+        </div>
+
+    </div>
+
+    <p
+        data-es="El modelo optimizado para Accuracy alcanza 0,891 de Accuracy y 0,960 de ROC-AUC. La optimización orientada a Recall alcanza un Recall de 0,902, reduciendo los falsos negativos de 9 a 6."
+        data-en="The Accuracy-optimized model reaches 0.891 Accuracy and 0.960 ROC-AUC. The Recall-optimized version reaches 0.902 Recall, reducing false negatives from 9 to 6.">
+        El modelo optimizado para Accuracy alcanza 0,891 de Accuracy y 0,960 de ROC-AUC. La optimización orientada a Recall alcanza un Recall de 0,902, reduciendo los falsos negativos de 9 a 6.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">06 · THRESHOLD ANALYSIS</p>
+
+    <h2
+        data-es="El umbral cambia la decisión"
+        data-en="The threshold changes the decision">
+        El umbral cambia la decisión
+    </h2>
+
+    <p
+        data-es="El análisis estudia Precision, Recall y F1 a diferentes umbrales en lugar de asumir 0,5 como punto de decisión universal."
+        data-en="The analysis studies Precision, Recall and F1 across different thresholds instead of assuming 0.5 as a universal decision point.">
+        El análisis estudia Precision, Recall y F1 a diferentes umbrales en lugar de asumir 0,5 como punto de decisión universal.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">07 · BUSINESS INTERPRETATION</p>
+
+    <h2
+        data-es="Rendimiento predictivo ≠ valor económico"
+        data-en="Predictive performance ≠ economic value">
+        Rendimiento predictivo ≠ valor económico
+    </h2>
+
+    <p
+        data-es="El modelo puede apoyar decisiones de crédito, pero el dataset no contiene información suficiente para calcular rentabilidad, pérdida esperada, probabilidad de impago, recovery rate, customer lifetime value o coste de capital."
+        data-en="The model can support credit decisions, but the dataset does not contain enough information to calculate profitability, expected loss, default probability, recovery rate, customer lifetime value or cost of capital.">
+        El modelo puede apoyar decisiones de crédito, pero el dataset no contiene información suficiente para calcular rentabilidad, pérdida esperada, probabilidad de impago, recovery rate, customer lifetime value o coste de capital.
+    </p>
+
+    <p
+        data-es="Por tanto, la importancia predictiva de una variable no debe interpretarse automáticamente como una conclusión causal o comercial."
+        data-en="Therefore, predictive feature importance should not automatically be interpreted as a causal or commercial conclusion.">
+        Por tanto, la importancia predictiva de una variable no debe interpretarse automáticamente como una conclusión causal o comercial.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">08 · LIMITATIONS</p>
+
+    <h2
+        data-es="Limitaciones"
+        data-en="Limitations">
+        Limitaciones
+    </h2>
+
+    <ul>
+
+        <li
+            data-es="Solo 690 observaciones."
+            data-en="Only 690 observations.">
+            Solo 690 observaciones.
+        </li>
+
+        <li
+            data-es="Dataset antiguo."
+            data-en="Dated dataset.">
+            Dataset antiguo.
+        </li>
+
+        <li
+            data-es="Variables anonimizadas."
+            data-en="Anonymized variables.">
+            Variables anonimizadas.
+        </li>
+
+        <li
+            data-es="Sin información económica sobre el coste de los errores."
+            data-en="No economic information about the cost of errors.">
+            Sin información económica sobre el coste de los errores.
+        </li>
+
+        <li
+            data-es="Sin validación temporal."
+            data-en="No temporal validation.">
+            Sin validación temporal.
+        </li>
+
+        <li
+            data-es="La importancia de variables no implica causalidad."
+            data-en="Feature importance does not imply causality.">
+            La importancia de variables no implica causalidad.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">09 · TECH STACK</p>
+
+    <h2
+        data-es="Stack técnico"
+        data-en="Technical stack">
+        Stack técnico
+    </h2>
+
+    <div class="case-tags">
+
+        <span>Python</span>
+        <span>pandas</span>
+        <span>scikit-learn</span>
+        <span>XGBoost</span>
+        <span>Random Forest</span>
+        <span>Logistic Regression</span>
+
+    </div>
+
+    <div class="case-links">
+
+        <a href="https://github.com/AlexMadu56/credit-approval-prediction"
+           target="_blank">
+            GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<footer class="case-footer">
+
+    <span>© Alejandro Madueño Gálvez</span>
+
+    <a href="../index.html#projects">
+        ← Projects
+    </a>
+
+</footer>
+
+
+<script>
+
+const langES = document.getElementById("lang-es");
+const langEN = document.getElementById("lang-en");
+
+const translatableElements =
+    document.querySelectorAll("[data-es][data-en]");
+
+function changeLanguage(language) {
+
+    translatableElements.forEach(element => {
+        element.textContent =
+            element.getAttribute(`data-${language}`);
+    });
+
+    document.documentElement.lang = language;
+
+    if (language === "es") {
+        langES.classList.add("active");
+        langEN.classList.remove("active");
+    } else {
+        langEN.classList.add("active");
+        langES.classList.remove("active");
+    }
+}
+
+langES.addEventListener("click", () => changeLanguage("es"));
+langEN.addEventListener("click", () => changeLanguage("en"));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn Prediction | Alejandro Madueño</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+</head>
+
+<body>
+
+<header class="case-navbar">
+
+    <a href="../index.html" class="case-logo">AMG</a>
+
+    <a href="../index.html#projects"
+       class="case-back"
+       data-es="← Volver a proyectos"
+       data-en="← Back to projects">
+        ← Volver a proyectos
+    </a>
+
+    <div class="language">
+        <button id="lang-es" class="active">ES</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="case-hero">
+
+    <span class="case-number">03 · CLASSIFICATION</span>
+
+    <h1>Customer Churn Prediction</h1>
+
+    <p class="case-intro"
+       data-es="Predicción del abandono de clientes mediante XGBoost, optimización del umbral e interpretación de los principales factores asociados al churn."
+       data-en="Customer churn prediction using XGBoost, threshold optimization and interpretation of the main factors associated with churn.">
+        Predicción del abandono de clientes mediante XGBoost, optimización del umbral e interpretación de los principales factores asociados al churn.
+    </p>
+
+    <div class="case-tags">
+        <span>Python</span>
+        <span>XGBoost</span>
+        <span>Classification</span>
+        <span>SHAP</span>
+    </div>
+
+</section>
+
+
+<div class="case-image">
+
+    <img src="../assets/customer-churn.png"
+         alt="Customer churn analysis">
+
+</div>
+
+
+<div class="case-main">
+
+
+<section class="case-section">
+
+    <p class="case-label">01 · PROBLEMA</p>
+
+    <h2
+        data-es="Identificar clientes con riesgo de abandono"
+        data-en="Identifying customers at risk of churn">
+        Identificar clientes con riesgo de abandono
+    </h2>
+
+    <p
+        data-es="El proyecto desarrolla un modelo de clasificación orientado a distinguir clientes con diferentes niveles de riesgo de abandono y evaluar hasta qué punto las predicciones pueden apoyar estrategias de retención."
+        data-en="The project develops a classification model to distinguish customers with different churn risks and evaluate how predictions can support retention strategies.">
+        El proyecto desarrolla un modelo de clasificación orientado a distinguir clientes con diferentes niveles de riesgo de abandono y evaluar hasta qué punto las predicciones pueden apoyar estrategias de retención.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">02 · APPROACH</p>
+
+    <h2
+        data-es="Un pipeline completo de Machine Learning"
+        data-en="A complete Machine Learning pipeline">
+        Un pipeline completo de Machine Learning
+    </h2>
+
+    <p
+        data-es="El flujo combina modelización predictiva, validación, optimización de hiperparámetros, selección del umbral de clasificación e interpretación del modelo."
+        data-en="The workflow combines predictive modelling, validation, hyperparameter optimization, classification threshold selection and model interpretation.">
+        El flujo combina modelización predictiva, validación, optimización de hiperparámetros, selección del umbral de clasificación e interpretación del modelo.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">03 · MODEL</p>
+
+    <h2
+        data-es="XGBoost optimizado"
+        data-en="Optimized XGBoost">
+        XGBoost optimizado
+    </h2>
+
+    <p
+        data-es="El modelo final utiliza XGBoost y se evalúa sobre un conjunto de test que permanece separado durante el desarrollo."
+        data-en="The final model uses XGBoost and is evaluated on a held-out test set kept separate during development.">
+        El modelo final utiliza XGBoost y se evalúa sobre un conjunto de test que permanece separado durante el desarrollo.
+    </p>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>0,8476</strong>
+            <span>ROC-AUC</span>
+        </div>
+
+        <div class="metric">
+            <strong>0,6462</strong>
+            <span>PR-AUC</span>
+        </div>
+
+        <div class="metric">
+            <strong>75,67 %</strong>
+            <span>Recall</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">04 · THRESHOLD</p>
+
+    <h2
+        data-es="El modelo no termina en 0,5"
+        data-en="The model does not end at 0.5">
+        El modelo no termina en 0,5
+    </h2>
+
+    <p
+        data-es="Tras optimizar el umbral de decisión, el modelo alcanza un Recall del 75,67 % y un F1-score del 64,25 %. El análisis permite estudiar el equilibrio entre identificar más clientes que abandonan y mantener una precisión razonable."
+        data-en="After optimizing the decision threshold, the model reaches 75.67% Recall and a 64.25% F1-score. The analysis makes it possible to study the trade-off between identifying more churners and maintaining reasonable precision.">
+        Tras optimizar el umbral de decisión, el modelo alcanza un Recall del 75,67 % y un F1-score del 64,25 %. El análisis permite estudiar el equilibrio entre identificar más clientes que abandonan y mantener una precisión razonable.
+    </p>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>75,67 %</strong>
+            <span>Recall</span>
+        </div>
+
+        <div class="metric">
+            <strong>64,25 %</strong>
+            <span>F1-score</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">05 · INTERPRETABILITY</p>
+
+    <h2
+        data-es="Conectar predicciones con decisiones"
+        data-en="Connecting predictions with decisions">
+        Conectar predicciones con decisiones
+    </h2>
+
+    <p
+        data-es="SHAP aporta una capa de interpretabilidad que permite estudiar qué variables contribuyen a las predicciones y conectar el comportamiento del modelo con posibles estrategias de retención."
+        data-en="SHAP provides an interpretability layer that helps identify which variables contribute to predictions and connect model behaviour with potential retention strategies.">
+        SHAP aporta una capa de interpretabilidad que permite estudiar qué variables contribuyen a las predicciones y conectar el comportamiento del modelo con posibles estrategias de retención.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">06 · CONCLUSION</p>
+
+    <h2
+        data-es="Del riesgo predictivo a la retención"
+        data-en="From predictive risk to retention">
+        Del riesgo predictivo a la retención
+    </h2>
+
+    <p
+        data-es="El proyecto demuestra un flujo reproducible desde los datos de clientes hasta la evaluación e interpretación de un modelo de churn. El modelo permite distinguir clientes con diferentes niveles de riesgo y ofrece una base cuantitativa para priorizar posibles acciones de retención."
+        data-en="The project demonstrates a reproducible workflow from customer data to model evaluation and interpretation. The model can distinguish customers with different risk levels and provides a quantitative basis for prioritizing potential retention actions.">
+        El proyecto demuestra un flujo reproducible desde los datos de clientes hasta la evaluación e interpretación de un modelo de churn. El modelo permite distinguir clientes con diferentes niveles de riesgo y ofrece una base cuantitativa para priorizar posibles acciones de retención.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">07 · TECH STACK</p>
+
+    <h2
+        data-es="Stack técnico"
+        data-en="Technical stack">
+        Stack técnico
+    </h2>
+
+    <div class="case-tags">
+        <span>Python</span>
+        <span>XGBoost</span>
+        <span>scikit-learn</span>
+        <span>SHAP</span>
+        <span>Classification</span>
+    </div>
+
+    <div class="case-links">
+
+        <a href="https://github.com/AlexMadu56/customer-churn-prediction"
+           target="_blank">
+            GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<footer class="case-footer">
+
+    <span>© Alejandro Madueño Gálvez</span>
+
+    <a href="../index.html#projects">
+        ← Projects
+    </a>
+
+</footer>
+
+
+<script>
+
+const langES = document.getElementById("lang-es");
+const langEN = document.getElementById("lang-en");
+
+const translatableElements =
+    document.querySelectorAll("[data-es][data-en]");
+
+function changeLanguage(language) {
+
+    translatableElements.forEach(element => {
+        element.textContent =
+            element.getAttribute(`data-${language}`);
+    });
+
+    document.documentElement.lang = language;
+
+    if (language === "es") {
+        langES.classList.add("active");
+        langEN.classList.remove("active");
+    } else {
+        langEN.classList.add("active");
+        langES.classList.remove("active");
+    }
+}
+
+langES.addEventListener("click", () => changeLanguage("es"));
+langEN.addEventListener("click", () => changeLanguage("en"));
+
+</script>
+
+</body>
+</html>
