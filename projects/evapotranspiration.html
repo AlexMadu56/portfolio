@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Evapotranspiration | Alejandro Madueño</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+</head>
+
+<body>
+
+<header class="case-navbar">
+
+    <a href="../index.html" class="case-logo">AMG</a>
+
+    <a href="../index.html#projects"
+       class="case-back"
+       data-es="← Volver a proyectos"
+       data-en="← Back to projects">
+        ← Volver a proyectos
+    </a>
+
+    <div class="language">
+        <button id="lang-es" class="active">ES</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="case-hero">
+
+    <span class="case-number">05 · STATISTICS · REGRESSION</span>
+
+    <h1>Evapotranspiration</h1>
+
+    <p class="case-intro"
+       data-es="Trabajo Fin de Máster sobre la robustez de modelos de minería de datos frente al ruido en la estimación de la evapotranspiración para agricultura inteligente."
+       data-en="Master's thesis on the robustness of data mining models under noise when estimating evapotranspiration for smart agriculture.">
+        Trabajo Fin de Máster sobre la robustez de modelos de minería de datos frente al ruido en la estimación de la evapotranspiración para agricultura inteligente.
+    </p>
+
+    <div class="case-tags">
+
+        <span>R</span>
+        <span>RStudio</span>
+        <span>Regression</span>
+        <span>Statistics</span>
+        <span>Data Mining</span>
+
+    </div>
+
+</section>
+
+
+<div class="case-image">
+
+    <img src="../assets/evapotranspiration.png"
+         alt="Evapotranspiration statistical analysis">
+
+</div>
+
+
+<div class="case-main">
+
+
+<section class="case-section">
+
+    <p class="case-label">01 · RESEARCH QUESTION</p>
+
+    <h2
+        data-es="¿Cómo afecta el ruido al rendimiento de los modelos?"
+        data-en="How does noise affect model performance?">
+        ¿Cómo afecta el ruido al rendimiento de los modelos?
+    </h2>
+
+    <p
+        data-es="El estudio analiza cómo la introducción progresiva de ruido en la variable objetivo afecta al rendimiento de distintos modelos de minería de datos aplicados a la estimación de la evapotranspiración."
+        data-en="The study analyses how progressively injecting noise into the target variable affects different data mining models used for evapotranspiration estimation.">
+        El estudio analiza cómo la introducción progresiva de ruido en la variable objetivo afecta al rendimiento de distintos modelos de minería de datos aplicados a la estimación de la evapotranspiración.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">02 · EXPERIMENT</p>
+
+    <h2
+        data-es="Contaminación progresiva de los datos"
+        data-en="Progressive data contamination">
+        Contaminación progresiva de los datos
+    </h2>
+
+    <p
+        data-es="Se estudia el comportamiento de diferentes algoritmos a medida que aumenta el porcentaje de ruido introducido en la variable dependiente."
+        data-en="Different algorithms are evaluated as the percentage of noise introduced into the dependent variable increases.">
+        Se estudia el comportamiento de diferentes algoritmos a medida que aumenta el porcentaje de ruido introducido en la variable dependiente.
+    </p>
+
+    <div class="case-columns">
+
+        <div class="case-column">
+
+            <h3>1NN</h3>
+
+            <p
+                data-es="Presenta la mayor vulnerabilidad frente a la contaminación de la variable objetivo y su capacidad predictiva se deteriora rápidamente."
+                data-en="Shows the highest vulnerability to target contamination, with predictive performance deteriorating rapidly.">
+                Presenta la mayor vulnerabilidad frente a la contaminación de la variable objetivo y su capacidad predictiva se deteriora rápidamente.
+            </p>
+
+        </div>
+
+        <div class="case-column">
+
+            <h3>SVM / Random Forest</h3>
+
+            <p
+                data-es="Muestran una mayor robustez global frente a niveles elevados de ruido."
+                data-en="Show greater overall robustness under higher noise levels.">
+                Muestran una mayor robustez global frente a niveles elevados de ruido.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">03 · FILTERING</p>
+
+    <h2
+        data-es="Filtrar antes de modelar"
+        data-en="Filtering before modelling">
+        Filtrar antes de modelar
+    </h2>
+
+    <p
+        data-es="Se aplican técnicas de filtrado adaptadas a regresión para eliminar instancias conflictivas antes del entrenamiento y reducir el impacto de las observaciones ruidosas."
+        data-en="Regression-oriented filtering techniques are applied to remove conflicting instances before training and reduce the impact of noisy observations.">
+        Se aplican técnicas de filtrado adaptadas a regresión para eliminar instancias conflictivas antes del entrenamiento y reducir el impacto de las observaciones ruidosas.
+    </p>
+
+    <div class="tech-box">
+
+        <p>
+            Datos con ruido → Filtro → Conjunto depurado →
+            Modelo → Evaluación
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">04 · MAIN RESULT</p>
+
+    <h2
+        data-es="El efecto del filtrado se vuelve especialmente relevante desde el 20 % de ruido"
+        data-en="Filtering becomes especially effective from 20% noise">
+        El efecto del filtrado se vuelve especialmente relevante desde el 20 % de ruido
+    </h2>
+
+    <div class="case-metrics">
+
+        <div class="metric">
+            <strong>≥ 20 %</strong>
+            <span
+                data-es="Nivel de ruido"
+                data-en="Noise level">
+                Nivel de ruido
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>Friedman</strong>
+            <span
+                data-es="Contraste global"
+                data-en="Global test">
+                Contraste global
+            </span>
+        </div>
+
+        <div class="metric">
+            <strong>Wilcoxon</strong>
+            <span
+                data-es="Comparaciones pareadas"
+                data-en="Paired comparisons">
+                Comparaciones pareadas
+            </span>
+        </div>
+
+    </div>
+
+    <p
+        data-es="Los análisis estadísticos muestran que las mejoras observadas tras el filtrado son consistentes y no se explican simplemente por variación aleatoria."
+        data-en="Statistical analyses indicate that the improvements observed after filtering are consistent and cannot simply be attributed to random variation.">
+        Los análisis estadísticos muestran que las mejoras observadas tras el filtrado son consistentes y no se explican simplemente por variación aleatoria.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">05 · STATISTICAL VALIDATION</p>
+
+    <h2
+        data-es="La mejora se contrasta estadísticamente"
+        data-en="The improvement is statistically tested">
+        La mejora se contrasta estadísticamente
+    </h2>
+
+    <p
+        data-es="La evaluación utiliza validación cruzada repetida y contrastes no paramétricos. El test de Friedman permite evaluar diferencias globales entre estrategias, mientras que las comparaciones pareadas de Wilcoxon permiten estudiar diferencias concretas."
+        data-en="The evaluation uses repeated cross-validation and non-parametric tests. The Friedman test evaluates global differences between strategies, while paired Wilcoxon comparisons examine specific differences.">
+        La evaluación utiliza validación cruzada repetida y contrastes no paramétricos. El test de Friedman permite evaluar diferencias globales entre estrategias, mientras que las comparaciones pareadas de Wilcoxon permiten estudiar diferencias concretas.
+    </p>
+
+    <p
+        data-es="La corrección de Holm controla el efecto de las comparaciones múltiples."
+        data-en="Holm correction is used to account for multiple comparisons.">
+        La corrección de Holm controla el efecto de las comparaciones múltiples.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">06 · FILTER / MODEL SYNERGY</p>
+
+    <h2
+        data-es="No existe un filtro universal"
+        data-en="There is no universal filter">
+        No existe un filtro universal
+    </h2>
+
+    <p
+        data-es="La eficacia de cada estrategia depende de la combinación entre filtro, algoritmo y nivel de ruido."
+        data-en="The effectiveness of each strategy depends on the combination of filter, algorithm and noise level.">
+        La eficacia de cada estrategia depende de la combinación entre filtro, algoritmo y nivel de ruido.
+    </p>
+
+    <div class="case-columns">
+
+        <div class="case-column">
+
+            <h3>regEF</h3>
+
+            <p
+                data-es="Se consolida como una estrategia especialmente compatible con 1NN y SVM."
+                data-en="Shows particularly strong compatibility with 1NN and SVM.">
+                Se consolida como una estrategia especialmente compatible con 1NN y SVM.
+            </p>
+
+        </div>
+
+        <div class="case-column">
+
+            <h3>regAENN</h3>
+
+            <p
+                data-es="Obtiene las métricas óptimas junto a los árboles de decisión."
+                data-en="Achieves the best metrics alongside decision-tree models.">
+                Obtiene las métricas óptimas junto a los árboles de decisión.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">07 · CONCLUSION</p>
+
+    <h2
+        data-es="Robustez mediante preprocesamiento"
+        data-en="Robustness through preprocessing">
+        Robustez mediante preprocesamiento
+    </h2>
+
+    <p
+        data-es="Los resultados muestran que el preprocesamiento puede desempeñar un papel crítico en el aprendizaje robusto cuando los datos contienen observaciones ruidosas. La combinación adecuada entre filtro y algoritmo permite mantener un comportamiento operativo incluso en escenarios de contaminación elevada."
+        data-en="The results show that preprocessing can play a critical role in robust learning when data contain noisy observations. An appropriate filter-model combination can maintain operational performance even under high contamination levels.">
+        Los resultados muestran que el preprocesamiento puede desempeñar un papel crítico en el aprendizaje robusto cuando los datos contienen observaciones ruidosas. La combinación adecuada entre filtro y algoritmo permite mantener un comportamiento operativo incluso en escenarios de contaminación elevada.
+    </p>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">08 · FUTURE WORK</p>
+
+    <h2
+        data-es="Siguientes pasos"
+        data-en="Future work">
+        Siguientes pasos
+    </h2>
+
+    <ul>
+
+        <li
+            data-es="Aplicar los filtros sobre conjuntos de datos con ruido real procedente de sensores."
+            data-en="Apply filtering techniques to datasets containing real sensor noise.">
+            Aplicar los filtros sobre conjuntos de datos con ruido real procedente de sensores.
+        </li>
+
+        <li
+            data-es="Analizar estructuras temporales y dependencias estacionales."
+            data-en="Analyse temporal structures and seasonal dependencies.">
+            Analizar estructuras temporales y dependencias estacionales.
+        </li>
+
+        <li
+            data-es="Validar los resultados en diferentes regiones climáticas."
+            data-en="Validate results across different climatic regions.">
+            Validar los resultados en diferentes regiones climáticas.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="case-section">
+
+    <p class="case-label">09 · TECH STACK</p>
+
+    <h2
+        data-es="Stack técnico"
+        data-en="Technical stack">
+        Stack técnico
+    </h2>
+
+    <div class="case-tags">
+
+        <span>R</span>
+        <span>RStudio</span>
+        <span>Regression</span>
+        <span>Statistics</span>
+        <span>Data Mining</span>
+        <span>Friedman</span>
+        <span>Wilcoxon</span>
+
+    </div>
+
+    <div class="case-links">
+
+        <a href="https://github.com/AlexMadu56/Resultados_TFM_Evapotranspiracion"
+           target="_blank">
+            GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<footer class="case-footer">
+
+    <span>© Alejandro Madueño Gálvez</span>
+
+    <a href="../index.html#projects">
+        ← Projects
+    </a>
+
+</footer>
+
+
+<script>
+
+const langES = document.getElementById("lang-es");
+const langEN = document.getElementById("lang-en");
+
+const translatableElements =
+    document.querySelectorAll("[data-es][data-en]");
+
+function changeLanguage(language) {
+
+    translatableElements.forEach(element => {
+        element.textContent =
+            element.getAttribute(`data-${language}`);
+    });
+
+    document.documentElement.lang = language;
+
+    if (language === "es") {
+        langES.classList.add("active");
+        langEN.classList.remove("active");
+    } else {
+        langEN.classList.add("active");
+        langES.classList.remove("active");
+    }
+}
+
+langES.addEventListener("click", () => changeLanguage("es"));
+langEN.addEventListener("click", () => changeLanguage("en"));
+
+</script>
+
+</body>
+</html>
